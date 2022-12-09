@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import khacey from "../../../assets/khacey.svg"
 
 const Container = styled.div` 
     height: 100vh;
