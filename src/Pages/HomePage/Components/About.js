@@ -8,6 +8,10 @@ const Container = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    box-shadow: 0px 2px 0px 0px rgba(0,0,0,0.75) inset;
+    -webkit-box-shadow: 0px 1px 0px 0px rgba(0,0,0,0.75) inset;
+    -moz-box-shadow: 0px 1px 0px 0px rgba(0,0,0,0.75) inset;
+    outline: 1px solid #A9A9A9;
 `;
 
 const SkillContainer = styled.div`
