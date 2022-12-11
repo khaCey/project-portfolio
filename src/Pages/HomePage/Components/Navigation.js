@@ -7,6 +7,7 @@ const Nav = styled.nav`
     top: 5em;
     width: 100%;
     z-index: 10;
+    user-select: none;
 `;
 
 const Ul = styled.ul`
@@ -19,18 +20,18 @@ const Ul = styled.ul`
 
 const NavLink = styled.a`
     padding: 0.25em;
-    &:hover{
-        color: #453443;
-        text-decoration: none;
-        border-bottom: 1px solid #878787;
-    }
     &:visited{
-        color: #878787;
+        color: #fca838;
         text-decoration: none;
     }
     &:link{
-        color: #878787;
+        color: #fca838;
         text-decoration: none;
+    }
+    &:hover{
+        color: #d38533;
+        text-decoration: none;
+        border-bottom: 1px solid #d38533;
     }
 `;
 const Navigation = () => {
