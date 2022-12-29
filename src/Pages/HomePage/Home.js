@@ -4,6 +4,7 @@ import Introduction from './Components/Introduction.js';
 import Projects from './Components/Projects.js';
 import About from './Components/About.js';
 import Contact from './Components/Contact.js';
+import NavProvider from "../../context/NavContext.js";
 
 const Div = styled.div`
   display : flex;
@@ -13,15 +14,13 @@ function Home() {
   
   return (
     <Div>
-      <Navigation></Navigation>
-      
-      <Introduction></Introduction>
-      
-      <About></About>
-
-      <Projects></Projects>
-
-      <Contact></Contact>
+      <NavProvider>
+        <Navigation/>
+        <Introduction/>
+        <About/>
+        <Projects/>
+        <Contact/>
+      </NavProvider>
     </Div>
   );
 }

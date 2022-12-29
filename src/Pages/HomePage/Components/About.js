@@ -1,10 +1,11 @@
 import styled from "styled-components";
 import { SkillBar } from 'react-skillbars';
+import { useNav } from "../../../hooks/useNav";
 
 const Container = styled.div`
     height: 100vh;
     width: 100%;
-    background: white;
+    background: #171717;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -40,9 +41,9 @@ const colors = {
     }
 };
 const Projects = () => {
-
+    const aboutRef = useNav("About");
     return (
-        <div id="about">
+        <div ref={aboutRef}id="about">
             <Container>
                 <SkillContainer>
                     <SkillBar skills={skills} colors={colors} height={25}/>

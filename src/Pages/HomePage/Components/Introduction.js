@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import background from "../../../assets/Background.png";
+import { useNav } from "../../../hooks/useNav";
 
 const Container = styled.div`
     height: 100vh;
@@ -19,7 +20,7 @@ const IntroContainer = styled.div`
     justify-content: center;
     background-image: url(${background});
     background-size: cover;
-    background-position: center;
+    background-position: left;
     z-index: 0;
 `;
 
@@ -46,9 +47,9 @@ const TextContainer = styled.div`
 
 
 const Introduction = () => {
-
+    const introRef = useNav("Introduction");
     return (
-        <div id="intro">
+        <div ref={introRef} id="introduction">
             <Container>
                 <IntroContainer>
                     <Div>

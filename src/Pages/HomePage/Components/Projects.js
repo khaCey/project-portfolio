@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { useNav } from "../../../hooks/useNav";
 
 const Container = styled.div`
     height: 100vh;
@@ -8,9 +9,9 @@ const Container = styled.div`
     overflow: hidden;
 `;
 const Projects = () => {
-
+    const projectRef = useNav("Projects");
     return (
-        <div id="projects">
+        <div ref={projectRef} id="projects">
             <Container>
             </Container>
         </div>

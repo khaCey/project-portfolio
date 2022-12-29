@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { useNav } from "../../../hooks/useNav";
 
 const Container = styled.div`
     position: relative;
@@ -69,9 +70,9 @@ const Vector5 = styled.div`
     filter: drop-shadow(5px 1px 3px #000);
 `;
 const Projects = () => {
-
+    const contactRef = useNav("Contact");
     return (
-        <div id="contact">
+        <div ref={contactRef}id="contact">
             <Container>
                 <Vector1></Vector1>
                 <Vector2></Vector2>
