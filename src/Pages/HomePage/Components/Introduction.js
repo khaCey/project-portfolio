@@ -10,7 +10,7 @@ const Container = styled.div`
 `;
 
 const IntroContainer = styled.div` 
-    position: fixed;
+    position: absolute;
     top: 0;
     outline: 1px solid white;
     height: 100vh;
