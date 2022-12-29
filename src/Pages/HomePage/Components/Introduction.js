@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Vector from "./Vectors/Vector";
+import background from "../../../assets/Background.png";
 
 const Container = styled.div`
     height: 100vh;
@@ -10,13 +10,16 @@ const Container = styled.div`
 `;
 
 const IntroContainer = styled.div` 
-    position: absolute;
+    position: fixed;
     top: 0;
     outline: 1px solid white;
     height: 100vh;
     width: 100%;
     display: flex;
     justify-content: center;
+    background-image: url(${background});
+    background-size: cover;
+    background-position: center;
     z-index: 0;
 `;
 
@@ -39,10 +42,7 @@ const TextContainer = styled.div`
     transform: translate(0, 50px);
 `;
 
-const Title = styled.h2`
-    position: relative;
-    top: -55px;
-`;
+
 
 
 const Introduction = () => {
@@ -50,7 +50,6 @@ const Introduction = () => {
     return (
         <div id="intro">
             <Container>
-                <Vector></Vector>
                 <IntroContainer>
                     <Div>
                         <TextContainer>
