@@ -4,14 +4,14 @@ import { useNav } from "../../../hooks/useNav";
 import { useState, useEffect } from "react";
 
 const OuterContainer = styled.div`
-    height: 105vh;
+    height: 110vh;
     width: 100%;
     background: #171717;
     position: relative;
 `;
 
 const Container = styled.div`
-    height: 105vh;
+    height: 110vh;
     width: 100%;
     background: #171717;
     display: flex;
