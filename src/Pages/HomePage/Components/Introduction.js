@@ -5,15 +5,11 @@ import { useNav } from "../../../hooks/useNav";
 const Container = styled.div`
     height: 100vh;
     width: 100%;
-    overflow: hidden;
     background: #282c34;
-    z-index: 0;
 `;
 
 const IntroContainer = styled.div` 
     position: absolute;
-    top: 0;
-    outline: 1px solid white;
     height: 100vh;
     width: 100%;
     display: flex;
@@ -21,28 +17,38 @@ const IntroContainer = styled.div`
     background-image: url(${background});
     background-size: cover;
     background-position: left;
-    z-index: 0;
+    position: fixed;
 `;
 
 const Div = styled.div`
     width: 85%;
-    height: 100vh;
-    padding-top: 7em;
-    color: #878787;
-    font-size: 1.25em;
+    height: 100%;
     display: flex;
     justify-content: flex-end;
 `;
 
 const TextContainer = styled.div`
-    width: 50%;
-    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    transform: translate(0, 50px);
 `;
 
+const H1 = styled.p`
+    user-select: none;
+    font-family: 'Lovers Quarrel', cursive;
+    font-size: 15em;
+    color: white;
+    &:hover{
+        cursor: pointer;
+    }
+`;
+const H2 = styled.p`
+    user-select: none;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 2em;
+    color: white;
+    transform: translate(-1em, -10em);
+`;
 
 
 
@@ -54,6 +60,8 @@ const Introduction = () => {
                 <IntroContainer>
                     <Div>
                         <TextContainer>
+                            <H1>Khacey</H1>
+                            <H2>Web Developer</H2>
                         </TextContainer>
                     </Div>
                 </IntroContainer>

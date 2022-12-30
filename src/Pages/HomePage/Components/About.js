@@ -1,9 +1,17 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { SkillBar } from 'react-skillbars';
 import { useNav } from "../../../hooks/useNav";
+import { useState, useEffect } from "react";
+
+const OuterContainer = styled.div`
+    height: 105vh;
+    width: 100%;
+    background: #171717;
+    position: relative;
+`;
 
 const Container = styled.div`
-    height: 100vh;
+    height: 105vh;
     width: 100%;
     background: #171717;
     display: flex;
@@ -12,7 +20,11 @@ const Container = styled.div`
     box-shadow: 0px 2px 0px 0px rgba(0,0,0,0.75) inset;
     -webkit-box-shadow: 0px 1px 0px 0px rgba(0,0,0,0.75) inset;
     -moz-box-shadow: 0px 1px 0px 0px rgba(0,0,0,0.75) inset;
-    z-index: 3;
+    position: relative;
+    ${props => props.fixed && css`
+        position: fixed;
+        top: 0;
+    `};
 `;
 
 const SkillContainer = styled.div`
@@ -42,13 +54,22 @@ const colors = {
 };
 const Projects = () => {
     const aboutRef = useNav("About");
+    const [fixedPosition, setFixedPosition] = useState(false);
+    useEffect(() => {
+        const handleScroll = () => {
+            setFixedPosition(window.scrollY > window.innerHeight);
+        }
+        window.addEventListener("scroll", handleScroll);
+    }, []);
     return (
         <div ref={aboutRef}id="about">
-            <Container>
-                <SkillContainer>
-                    <SkillBar skills={skills} colors={colors} height={25}/>
-                </SkillContainer>
-            </Container>
+            <OuterContainer>
+                <Container fixed={fixedPosition}>
+                    <SkillContainer>
+                        <SkillBar skills={skills} colors={colors} height={25}/>
+                    </SkillContainer>
+                </Container>
+            </OuterContainer>
         </div>
     );
 }

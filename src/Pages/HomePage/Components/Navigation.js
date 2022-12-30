@@ -32,6 +32,7 @@ const Ul = styled.ul`
 const NavLink = styled.a`
     position: relative;
     padding: 0.25em;
+    font-family: 'Roboto Mono', monospace;
     &:visited{
         color: #fca838;
     }
@@ -47,7 +48,8 @@ const NavLink = styled.a`
         height: 1px;
         width: 100%;
         background-color: #fca838;
-        bottom: 0em;
+        bottom: 0;
+        left: 0;
         transform: scale(0, 1);
         transition: transform 0.25s ease;
         transform-origin: 0 100%;
@@ -65,13 +67,13 @@ const NavLink = styled.a`
         height: 1px;
         width: 100%;
         background-color: #fca838;
-        bottom: 0em;
+        bottom: 0;
+        left: 0;
     }
 `;
 
 const Navigation = () => {
     const { activeLinkID } = useContext(NavContext);
-    console.log(activeLinkID);
 
     const navLinks = ["Introduction", "About", "Projects", "Contact"];
     const renderNavLink = (content) => {
