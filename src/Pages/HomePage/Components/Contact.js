@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { useNav } from "../../../hooks/useNav";
 
 const Container = styled.div`
-    height: 100vh;
+    height: 110vh;
     width: 100%;
     background: #171717;
     overflow: hidden;

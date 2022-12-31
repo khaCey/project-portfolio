@@ -11,13 +11,25 @@ const Construction = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: center;
+    align-items: center;
     user-select: none;
 `;
-
+const I = styled.div`
+  border-radius: 50%;
+  color: black;
+  font-size: 0.75em;
+  width: 1em;
+  height: 1em;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 0.5em;
+`;
 function Banner() {
   return (
     <Construction>
-        Site is under construction.
+      <I>i</I>Site is under construction.
     </Construction>
   )
 }

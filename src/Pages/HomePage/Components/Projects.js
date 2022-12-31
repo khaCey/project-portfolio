@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import styled, { css } from "styled-components";
 import { useNav } from "../../../hooks/useNav";
+import MiseBackground from "../../../assets/Mise.png";
 
 const OuterContainer = styled.div`
     height: 110vh;
@@ -40,8 +41,6 @@ const Gallery = styled.ul`
 const GalleryItem = styled.li`
     width: 18em;
     height: 9em;
-    border: 1px solid #878787;
-    background-color: #878787;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -55,15 +54,9 @@ const GalleryItem = styled.li`
     -moz-border-radius-bottomleft: px;10
     border-top-right-radius: 10px
     border-bottom-left-radius: 10px;
-    box-shadow: 10px 30px 24px 0px rgba(0,0,0,0.75);
-    -webkit-box-shadow: 10px 10px 24px 0px rgba(0,0,0,0.75);
-    -moz-box-shadow: 10px 10px 24px 0px rgba(0,0,0,0.75);
     &:hover{
         transform: translate(0, -1.25em);
         transition: transform 0.5s ease;
-        box-shadow: 10px 30px 24px 0px rgba(0,0,0,0.75);
-        -webkit-box-shadow: 10px 30px 24px 0px rgba(0,0,0,0.75);
-        -moz-box-shadow: 10px 30px 24px 0px rgba(0,0,0,0.75);
     }
     &:hover .label{
         color: #fca838;
@@ -72,10 +65,8 @@ const GalleryItem = styled.li`
     }
 `;
 const ItemLink = styled.a`
-    outline: 1px solid white;
     height: 100%;
     width: 100%;
-    background-color: white;
     -webkit-border-top-right-radius: 10px;
     -webkit-border-bottom-left-radius: 10px;
     -moz-border-radius-topright: 10px;
@@ -83,6 +74,8 @@ const ItemLink = styled.a`
     border-top-right-radius: 10px
     border-bottom-left-radius: 10px;
     z-index: 1;
+    background-size: cover;
+    background-position: center;
 `;
 const Label = styled.h3`
     font-family: 'Roboto Mono', monospace;
@@ -103,8 +96,8 @@ const Projects = () => {
     const galleryItems = [
         {
             "name" : "Mise", 
-            "link" : "https://api.khaceyslanaitheoir.com",
-            "icon" : ""
+            "link" : "https://khaceyslanaitheoir.com",
+            "background" : MiseBackground
         },
         {
             "name" : "Scoile", 
@@ -141,7 +134,7 @@ const Projects = () => {
         return (
             <>
             <GalleryItem>
-                <ItemLink href={content.link} className="labelLink">
+                <ItemLink href={content.link} className="labelLink" style={{ backgroundImage: 'url('+ content.background + ')' }}>
                 </ItemLink>
                 <Label className="label">
                     {content.name}
