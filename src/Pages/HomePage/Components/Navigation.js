@@ -51,7 +51,7 @@ const NavLink = styled.a`
         bottom: 0;
         left: 0;
         transform: scale(0, 1);
-        transition: transform 0.25s ease;
+        transition: transform 0.5s cubic-bezier(1,1,0,1);
         transform-origin: 0 100%;
     }
     

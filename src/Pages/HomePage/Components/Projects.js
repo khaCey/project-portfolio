@@ -3,6 +3,8 @@ import { useEffect } from "react";
 import styled, { css } from "styled-components";
 import { useNav } from "../../../hooks/useNav";
 import MiseBackground from "../../../assets/Mise.png";
+import CodePenBackground from "../../../assets/CodePen.png";
+import GitHubBackground from "../../../assets/GitHub.png";
 
 const OuterContainer = styled.div`
     height: 110vh;
@@ -54,14 +56,13 @@ const GalleryItem = styled.li`
     -moz-border-radius-bottomleft: px;10
     border-top-right-radius: 10px
     border-bottom-left-radius: 10px;
+    transition: transform 0.5s cubic-bezier(.69,.6,0,1);
     &:hover{
         transform: translate(0, -1.25em);
-        transition: transform 0.5s ease;
     }
     &:hover .label{
         color: #fca838;
         transform: translate(0, 3.25em);
-        transition: transform 0.5s ease;
     }
 `;
 const ItemLink = styled.a`
@@ -76,12 +77,14 @@ const ItemLink = styled.a`
     z-index: 1;
     background-size: cover;
     background-position: center;
+    background-color: #282c34;
 `;
 const Label = styled.h3`
     font-family: 'Roboto Mono', monospace;
     color:  #fca838;
     position: fixed;
     z-index: 0;
+    transition: transform 0.5s cubic-bezier(.69,.6,0,1);
 `;
 
 const Projects = () => {
@@ -95,6 +98,16 @@ const Projects = () => {
     }, []);
     const galleryItems = [
         {
+            "name" : "CodePen", 
+            "link" : "https://codepen.io/khacey",
+            "background" : CodePenBackground
+        },
+        {
+            "name" : "GitHub", 
+            "link" : "https://github.com/khaCey",
+            "background" : GitHubBackground
+        },
+        {
             "name" : "Mise", 
             "link" : "https://khaceyslanaitheoir.com",
             "background" : MiseBackground
@@ -102,27 +115,17 @@ const Projects = () => {
         {
             "name" : "Scoile", 
             "link" : "",
-            "icon" : ""
-        },
-        {
-            "name" : "UXUI", 
-            "link" : "",
-            "icon" : ""
-        },
-        {
-            "name" : "Project-L", 
-            "link" : "",
-            "icon" : ""
+            "background" : ""
         },
         {
             "name" : "Project-Beta", 
             "link" : "",
-            "icon" : ""
+            "background" : ""
         },
         {
             "name" : "Project-Alpha", 
             "link" : "",
-            "icon" : ""
+            "background" : ""
         },
         {
             "name" : "Project-Lambda", 
